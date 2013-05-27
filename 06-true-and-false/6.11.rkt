@@ -13,15 +13,13 @@
 (define (between? number a b)
   (and (>= number a) (<= number b)))
 
-(define (valid-day? day month year)
-  (cond ((member? month '(1 3 5 7 8 10 12)) (between? day 1 31))
-        ((member? month '(4 6 9 11)) (between? day 1 30))
-        (else (if (leap-year? year)
-                  (between? day 1 29)
-                  (between? day 1 28)))))
-
 (define (valid-date? day month year)
-  (and (valid-month? month) (valid-day? day month year)))
+  (and (valid-month? month)
+       (cond ((member? month '(1 3 5 7 8 10 12)) (between? day 1 31))
+             ((member? month '(4 6 9 11)) (between? day 1 30))
+             (else (if (leap-year? year)
+                       (between? day 1 29)
+                       (between? day 1 28))))))
 
 ; tests for valid-date?
 (valid-date? 4 10 1949)
