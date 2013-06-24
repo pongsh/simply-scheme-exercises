@@ -1,0 +1,5 @@
+(define (type-of argument)
+  (cond ((number? argument) 'NUMBER)
+        ((sentence? argument) 'SENTENCE)
+        ((word? argument) 'WORD)
+        ((boolean? argument) 'BOOLEAN)))

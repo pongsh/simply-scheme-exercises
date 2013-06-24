@@ -1,0 +1,5 @@
+(define (describe-time time)
+  (cond ((> time 86400) (se (/ time 86400) 'day))
+        ((> time 3600) (se (/ time 3600) 'hour))
+        ((> time 60) (se (/ time 60) 'minute))
+        (else (se time 'second))))
