@@ -1,6 +1,0 @@
-(define (greet name)
-  (se '(pleased to meet you)
-      (cond ((equal? (first name) 'professor) (se 'professor (bf name)))
-            ((equal? (first name) 'dr) (se 'dr (last name)))
-            ((equal? (first name) 'queen) '(your majesty)))
-      '(- how are you?)))
