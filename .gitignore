@@ -1,4 +1,4 @@
 *.bak
-*.rkt~
+*.scm~
 book-code/
 temp/
