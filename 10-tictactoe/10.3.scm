@@ -1,0 +1,7 @@
+(define (tie-game? position)
+  (let ((triples (find-triples position)))
+    (and (<= (appearances '_ position) 2)
+         (not (already-won? position 'x))
+         (not (already-won? position 'o))
+         (not (i-can-win? triples 'x))
+         (not (i-can-win? triples 'o)))))
