@@ -1,0 +1,8 @@
+(define (converse)
+  (display "Hello I'm the computer. What's your name? ")
+  (let ((name (read-line)))
+    (display (se "Hi, " name ". How are you? ")))
+  (let ((feeling (read-line)))
+    (if (equal? 'fine feeling)
+        (display "Glad to hear it")
+        (display "Oh no. :("))))
